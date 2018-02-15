@@ -1,0 +1,16 @@
+<article class="popinion col-12 col-sm-12 col-lg-8 container" id="opiniones">
+    {{#each opiniones}}
+	    <div>
+			<div class="pcol1">	
+					<img src={{this.imagen}}>
+			</div>
+			<div class="pcol3 float-right">
+					<span>{{valoracion}}/10</span>
+			</div>
+			<div class="pcol2">
+					<h4>{{this.nombre}}</h4>
+					<p>{{this.comentario}}</p>
+			</div>
+		</div>
+	{{/each}}
+</article>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gastro GUIDE</title>
+	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="shortcut icon" type="image/x-icon" href="img/logoicon.png">
+	<!--BOOTSTRAP-->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="mod.validador/Validador.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<nav class="navegacion">
+			<!--navbar-->
+			<ul class="navbar">
+				<li class="lista-navbar">
+					<a href="index.html">
+						<img src="img/logo-small.png" alt="" class="gastro-guide-logo">
+					</a>
+				</li>
+				<span class="navbar-derecha">
+					<a href="LoginSignup.html">
+						<button class="inicia-sesion">
+							<div class="icon-user">
+								<img src="img/man-user.png" alt="">
+							</div>
+							Inicia sesión
+						</button>
+					</a>
+				</span>
+			</ul>
+		</nav>
+		<!--buscador-->
+	</header>
+
+	<div class="container">
+		<ul class="nav nav-tabs" id="myTab" role="tablist" class="col-lg-12 col-md-12 col-sm-12">
+			<li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="fotos-tab" data-toggle="tab" href="#fotos" role="tab" aria-controls="nav-fotos" aria-selected="false">Publicar o modificar fotos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="nav-videos" aria-selected="false">Publicar Vídeos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="nav-menu" aria-selected="false">Menu</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="ofertas-tab" data-toggle="tab" href="#ofertas1-tab" role="tab" aria-controls="ofertas" aria-selected="false">Ofertas</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="recetas-tab" data-toggle="tab" href="#recetas" role="tab" aria-controls="ofertas" aria-selected="false">Recetas</a>
+			</li>
+		</ul>
+
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active mb-5" id="fotos" role="tabpanel" aria-labelledby="fotos-tab">
+				<h3 class="mt-5 mb-5">Publicar o modificar fotos</h3>
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<div id="pub-con-f-an-tab">
+							<div id="pub-con-f-an-tab-txt">
+								<input type="file" id="imgsrc" class="inputfile d-none">
+								<label for= "imgsrc" class="boton">Añadir imagenes</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-8 col-md-12">
+						<div class="row" id="pub-con-gal">
+
+							<div class="col-md-6 col-sm-12">
+								<img class="img-thumbnail w-20 mb-5" src="img/alex.jpg" alt="">
+							</div>
+							<div class="col-md-6 col-sm-12" >
+								<img class="img-thumbnail" src="img/roman.jpg" alt="">
+							</div>
+
+							<div class="col-md-6 col-sm-12">
+								<img class="img-thumbnail" src="img/chutter.jpg" alt="">
+							</div>
+
+							<div class="col-md-6 col-sm-12">
+								<img class="img-thumbnail" src="img/jay.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>
+
+			<div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+				<h3 class="mt-5 mb-5">Publicar videos</h3>			
+				<div class="row">
+					<div class="col-lg-12">
+						<form id="form-video-res">
+							<div class="form-group">
+								<input class="form-control" id="titVideo" type="text" placeholder="Introduce un titulo...">
+								<div class= "errorRojo" id="titVideoOK"></div>
+							</div>	
+							<div class="form-group">
+								<input class="form-control" id="descVideo" type="text" placeholder="Descripción">
+								<div class= "errorRojo" id="descVideoOK"></div>
+							</div>
+							<div class="form-group">
+								<input class="form-control" id="urlVideo" type="text" placeholder="URL">
+								<div class= "errorRojo" id="urlVideoOK"></div>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="textoVideo" rows="3" placeholder="Introduce un texto..."></textarea>
+								<div class= "errorRojo" id="textoVideoOK"></div>								
+							</div>
+							<div id="errorVideoResturante"></div>
+						</form>
+					</div>
+					<div class="col-lg-12 mb-5">
+						<button class="boton float-right" id="btnVideos">Aplicar</button>	
+					</div>
+					<div id="errorVideoResturante"></div>
+				</div>
+			</div>
+
+			<div class="tab-pane fade" id="menu" role="tabpanel" aria-labelledby="menu-tab">
+				<h3 class="mt-5  mb-5">Introduce tu Menú</h3>
+				<div class="row">
+					<div class="col-lg-12">
+						<form id="form-menu-restaurante">
+							<div class="form-group">
+								<textarea class="form-control" id="entrante" rows="3" placeholder="Introduce los entrantes..."></textarea>
+								<div class= "errorRojo" id="entranteOK"></div>	
+								<div class="form-group mt-3">
+									<textarea class="form-control" id="primerPlato" rows="3" placeholder="Introduce los primeros platos..."></textarea>
+									<div class= "errorRojo" id="primerPlatoOK"></div>								
+								</div>
+								<div class="form-group mt-3">
+									<textarea class="form-control" id="segundoPlato" rows="3" placeholder="Introduce los segundos platos..."></textarea>
+									<div class= "errorRojo" id="segundoPlatoOK"></div>								
+								</div>
+								<div class="form-group mt-3">
+									<textarea class="form-control" id="postre" rows="3" placeholder="Introduce los postres..."></textarea>
+									<div class= "errorRojo" id="postreOK"></div>								
+								</div>
+								<div class="form-group mt-3">
+									<input class="form-control" id="titMenu" type="text" placeholder="Nombre del menú">
+									<div class= "errorRojo" id="titMenuOK"></div>
+									<textarea class="form-control mt-3" id="nombreMenu" rows="3" placeholder="Introduce algún aspecto destacado..."></textarea>
+									<div class= "errorRojo" id="nombreMenuOK"></div>								
+								</div>	
+								<div id="errorMenuRestaurante"></div>					
+							</div>
+						</form>
+					</div>
+					<div class="col-lg-12 mb-5">
+						<button class="boton float-right" id="btnMenu">Aplicar</button>	
+					</div>
+				</div>
+			</div>
+
+
+			<div class="tab-pane fade" id="ofertas1-tab" role="tabpanel" aria-labelledby="ofertas1-tab">
+				<h3 class="mt-5">Ofertas</h3>
+					<form id="form-oferta-restaurante">
+						<div class="form-check text-lg-left col-lg-12 mt-5">
+							<input type="checkbox" class="form-check-input" id="radioOferta1">
+							<label class="form-check-label" for="radioOferta1">Promociones</label>
+							<br>
+							<input type="checkbox" class="form-check-input" id="radioOferta2">
+							<label class="form-check-label" for="radioOferta2">Descuentos</label>
+							<br>
+							<div id="radioOfertaOK" class="errorRojo"></div>	
+							<textarea class="form-control mt-5" id="textoOferta" rows="3" placeholder="Describe la oferta..."></textarea>
+							<div id="textoOfertaOK" class="errorRojo"></div>
+							<div class="col-lg-12 p-0">
+								<button class="boton float-right" id="btnOferta">Aplicar</button>	
+								<br>
+								<br>
+							</div>
+							<div id="errorOfertaRestaurante" class="mb-5"></div>
+					</form>
+				</div>
+			</div>
+
+			<div class="tab-pane fade mb-5" id="recetas" role="tabpanel" aria-labelledby="recetas-tab">
+				<h3 class="mt-5 mb-5">Publicar recetas</h3>
+				<div class="row">
+					<div class="col-lg-12">
+						<form id="form-recetas-restaurante">									
+							<div class="form-group">
+								<input class="form-control mb-5" id="receta" type="text" name="receta" placeholder="Nombre de la receta...">
+								<div id="recetaOK" class="errorRojo"></div>
+							</div>
+							<div class="form-group">
+								<input id="ingredientes" class="form-control" type="text" name="ingredientes" placeholder="Ingredientes...">
+								<div id="ingredientesOK" class="errorRojo"></div>	
+								<div class="col-lg-12 text-right p-0">
+									<button class="boton" id="btnIngredientes">Añadir +</button>
+								</div>		
+							</div>				
+						
+							<div>
+								<ul id="listaIngredientes"></ul>
+							</div>
+							
+							<div class="form-group">
+								<div id="textoRecetaOK" class="errorRojo"></div>
+								<textarea class="form-control" id="textoReceta" rows="3" placeholder="Introduce la preparación de la receta..."></textarea>
+								<br>
+								<div id="errorRecetaRestaurante"></div>
+								<button class="boton paddbtn" id="btnReceta">Aplicar</button>	
+							</div>	
+						</form>
+					</div>
+				</div>           
+			</div>			
+	</div>
+</div>
+
+<footer>
+	<div class="footer">
+		<div class="foo-row">
+			<div class="foo-col1">
+				<a href="avisolegal.html" target="_blank">
+					<h4>Aviso legal</h4>
+				</a>
+				<a href="condiciones.html" target="_blank">
+					<h4>Condiciones legales</h4>
+				</a>
+			</div>
+
+			<div class="img-footer">
+				<img id="logo-footer" src="img/logo.png" alt="logo" />
+			</div>
+
+			<div class="foo-col2">
+				<h3>Conectar</h3>
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/" target="_blank">
+							<img src="img/facebook.png">
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.twitter.com/" target="_blank">
+						<img src="img/twitter.png">
+					</i>
+				</a>
+			</li>
+			<li>
+				<a href="https://plus.google.com/" target="_blank">
+					<img src="img/google-plus.png">
+				</i>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="copyright">
+
+	<div class="contenedor">
+		<p>© 2017 GASTRO GUIDE - Todos los Derechos Reservados</p>
+		<p id="texto-footer">*Ver condiciones y validez en la ficha del restaurante. Las ofertas sobre las bebidas alcohólicas están estrictamente
+			reservadas para los adultos. El abuso de alcohol es peligroso para la salud. Consumir con moderación. El restaurante
+			y GastroGuide declinan toda responsabilidad en caso de abuso.
+		</p>
+	</div>
+
+</div>
+</div>
+</footer>
+<!-- JS -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<!-- BOOTSTRAP --> 
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/handlebars-v4.0.11.js"></script>
+<<<<<<< Updated upstream
+<script src="mod.gestion_plantilla/gestormodplantilla.js"></script>
+=======
+<script src="../mod.gestion_plantilla/gestormodplantilla.js"></script>
+>>>>>>> Stashed changes
+<script src="javascript/homerestaurante.js"></script>
+<script src="./javascript/general.js"></script>
+</body>
+</html>

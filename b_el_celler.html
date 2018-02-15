@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gastro GUIDE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logoicon.png">
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="perfil_rest">
+    <header>
+        <nav class="navegacion">
+            <!--navbar-->
+            <ul class="navbar">
+                <li class="lista-navbar">
+                    <a href="index.html">
+                        <img src="img/logo-small.png" alt="" class="gastro-guide-logo">
+                    </a>
+                </li>
+                <span class="navbar-derecha">
+                    <a href="LoginSignup.html">
+                        <button class="inicia-sesion">
+                            <div class="icon-user">
+                                <img src="img/man-user.png" alt="">
+                            </div>
+                            Inicia sesión
+                        </button>
+                    </a>
+                </span>
+            </ul>
+        </nav>
+        <!--buscador-->
+        <div class="cuadro-blanco" align="center">
+			<form class="formulario" name="buscador" id="buscar_submit">
+				<!--primer selector-->
+				<select name="" id="selc-cocina" class="selector-buscador mobile-out">
+				</select>
+				<img class="espacio-imagen" src="img/glass-icon.png" alt="">
+				<input name="buscar_adress" type="search" placeholder="Dirección o código postal..." class="selector-buscador" size="26">
+				<!--segundo selector-->
+				<input name="fecha" type="date" class="selector-buscador mobile-out">
+				<!--tercer selector-->
+				<select name="" id="" class="selector-buscador mobile-out">
+					<option value="option 1">8:00</option>
+					<option value="option 2">9:00</option>
+					<option value="option 3">10:00</option>
+					<option value="option 4">11:00</option>
+					<option value="option 5">12:00</option>
+				</select>
+				<!--cuarto selector-->
+				<select name="" id="" class="selector-buscador mobile-out">
+					<option value="option 1">1 persona</option>
+					<option value="option 2">2 personas</option>
+					<option value="option 3">3 personas</option>
+					<option value="option 4">4 personas</option>
+					<option value="option 5">5 personas</option>
+				</select>
+				<button class="selector-buscador" id="btn_busqueda">
+					Buscar
+				</button>
+			</form>
+			<div id="errorbusqueda"></div>
+			<div id="errorfecha"></div>
+		</div>
+   		 <!-- Buscador Movil -->
+        <form name="buscador_mvl" class="container formulario" id="form_buscar_submit">
+            <div class="form-row">
+                <div class="col-9">
+                    <input name="buscar_adress" id="buscar_adress_mvl" type="search" class="form-control input-group-prepend" placeholder="Dirección">
+                </div>
+                <div class="col-1">
+                    <!-- Button trigger modal -->
+                    <button id="selector-buscador-mvl" type="button" data-toggle="modal" class="btn btn-outline-secondary" data-target="#exampleModal">Buscar</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="opciones" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="address_ModalLabel">Modal title</h5>
+                            </div>
+                            <div class="modal-body form-group">
+                                <div class="form-row mb-2">
+                                    <select name="tipo-cocina" id="modal-cocina" class="form-control">
+                                    </select>
+                                </div>
+                                <div class="form-row mb-2">
+                                    <input name="fecha" type="date" class="form-control" placeholder="Last name">
+                                </div>
+                                <div class="form-row mb-2">
+                                    <select name="hora" id="inputState" class="form-control">
+                                        <option selected>Hora</option>
+                                        <option value="option 1">8:00</option>
+                                        <option value="option 2">9:00</option>
+                                        <option value="option 3">10:00</option>
+                                        <option value="option 4">11:00</option>
+                                        <option value="option 5">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <select name="personas" id="inputState" class="form-control">
+                                        <option selected>Personas</option>
+                                        <option value="option 1">1 persona</option>
+                                        <option value="option 2">2 personas</option>
+                                        <option value="option 3">3 personas</option>
+                                        <option value="option 4">4 personas</option>
+                                        <option value="option 5">5 personas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </header>
+    <section class="perfil">
+        <div>
+            <a href="b_filtrar.html">
+                <button class="boton">Volver a la busqueda</button>
+            </a>
+        </div>
+        <article class="pdatos container mt-3">
+           <div class="row">
+           		<div class="float-right align-middle col-6 col-sm-6 col-lg-8">
+					<p id="valoracion"></p>
+				</div>
+				<div class="col-12">
+					<h2 id="nombre"></h2>
+					<address id="adresa"></address>
+					<div>
+						<ul id="tipo">
+
+						</ul>
+					</div>
+				</div>
+           </div>
+            <div id="imagen">
+                
+            </div>
+        </article>
+        <!--tab-->
+			<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+			  <li class="nav-item">
+				<a class="nav-link active text-warning font-weight-bold" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Menu</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Opiniones</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Oferta</a>
+			  </li>
+			 <!-- <li class="nav-item">
+				<a class="nav-link text-warning font-weight-bold" id="pills-recetas-tab" data-toggle="pill" href="#pills-recetas" role="tab" aria-controls="pills-recetas" aria-selected="false">Recetas</a>
+			  </li> -->
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			  	<article class="pmenu container col-12 col-sm-12 col-lg-8">
+					<h2 class="mb-3">MENÚS</h2>
+					<div id="menu"></div>
+				</article>
+			  </div>
+			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+			  	<article class="popinion col-12 col-sm-12 col-lg-8 container" id="opiniones">
+        		</article>
+			  </div>
+			  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+			  	<article class="poferta container col-12 col-sm-12 col-lg-8" id="poferta"></article>
+			  </div>
+			  <!-- <div class="tab-pane fade" id="pills-recetas" role="tabpanel" aria-labelledby="pills-recetas-tab">
+			  	<article class="precetas container col-12 col-sm-12 col-lg-12" id="recetas"></article>
+			  </div> -->
+			</div>
+       	<!--tab-->
+    </section>
+</div>
+    <footer>
+		<div class="footer pb-4 pt-4">
+			<div class="row justify-content-center">
+				<div class="col-3">
+					<a href="avisolegal.html" target="_blank">
+						<h4>Aviso legal</h4>
+					</a>
+					<a href="condiciones.html" target="_blank">
+						<h4>Condiciones legales</h4>
+					</a>
+				</div>
+
+				<div class="img-footer col-3">
+					<img id="logo-footer" src="img/logo.png" alt="logo" />
+				</div>
+
+				<div class="col-3">
+					<h3>Conectar</h3>
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/" target="_blank">
+								<img src="img/facebook.png">
+								</i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.twitter.com/" target="_blank">
+								<img src="img/twitter.png">
+								</i>
+							</a>
+						</li>
+						<li>
+							<a href="https://plus.google.com/" target="_blank">
+								<img src="img/google-plus.png">
+								</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="copyright col-12">
+
+					<div class="contenedor">
+						<p>© 2017 GASTRO GUIDE - Todos los Derechos Reservados</p>
+						<p id="texto-footer">*Ver condiciones y validez en la ficha del restaurante. Las ofertas sobre las bebidas alcohólicas están estrictamente
+							reservadas para los adultos. El abuso de alcohol es peligroso para la salud. Consumir con moderación. El restaurante
+							y GastroGuide declinan toda responsabilidad en caso de abuso.
+						</p>
+					</div>
+
+				</div>
+			</div>
+	</footer>
+    <!-- JS -->
+ 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<!-- BOOTSTRAP --> 
+ 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="node_modules/handlebars-v4.0.11.js"></script>
+	<script src="../mod.gestion_plantilla/gestormodplantilla.js"></script>
+    <script src="javascript/elCeller.js"></script>
+	<script src="./javascript/general.js"></script>
+
+</body>
+
+</html>
